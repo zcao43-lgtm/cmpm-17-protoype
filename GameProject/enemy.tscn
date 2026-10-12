@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dsdn186wif7ao"]
+
+[ext_resource type="Script" uid="uid://f8qm56njwwf6" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bwqgvfhlgrwk4" path="res://Assets/enemy1.png" id="1_7k104"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k104"]
+atlas = ExtResource("1_7k104")
+region = Rect2(3, 0, 37, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
+atlas = ExtResource("1_7k104")
+region = Rect2(40, 0, 37, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
+atlas = ExtResource("1_7k104")
+region = Rect2(77, 0, 37, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
+atlas = ExtResource("1_7k104")
+region = Rect2(114, 0, 37, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epg4t"]
+atlas = ExtResource("1_7k104")
+region = Rect2(151, 0, 37, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ywyc"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k104")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gyqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi2p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iifgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epg4t")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xuycy"]
+radius = 32.0
+height = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxglt"]
+radius = 159.00314
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1469651218]
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=663713877]
+position = Vector2(-0.99999994, 3)
+scale = Vector2(2.9594595, 3.078125)
+sprite_frames = SubResource("SpriteFrames_6ywyc")
+animation = &"new_animation"
+frame_progress = 0.17316031
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=34992640]
+shape = SubResource("CapsuleShape2D_xuycy")
+
+[node name="Detection" type="Area2D" parent="." unique_id=779315631]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1782503991]
+position = Vector2(-2, 6)
+shape = SubResource("CircleShape2D_hxglt")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
