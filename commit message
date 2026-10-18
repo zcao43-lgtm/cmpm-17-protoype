@@ -1,0 +1,2 @@
+I used Aseprite to draw a slime enemy disguised as a gummy rabbit and added it to my Godot game.
+I created an enemy scene where the enemy starts chasing the player upon entering the detection range and stops moving when the player leaves that range.
