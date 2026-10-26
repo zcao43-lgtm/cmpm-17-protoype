@@ -1,10 +1,17 @@
 extends CharacterBody2D
-@export var speed : float = 200.0
-@export var acceleration : float = 0.05
-@export var deceleration : float = 0.08
+
+@export var speed: float = 200.0
+@export var acceleration: float = 0.05
+@export var deceleration: float = 0.08
 
 func _physics_process(delta: float) -> void:
 	get_input()
+
+	if velocity.length() > 0.1:
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 0
 
 func get_input() -> void:
 	if Input.is_action_pressed("D"):
