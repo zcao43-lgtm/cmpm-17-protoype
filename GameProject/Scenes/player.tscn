@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://embjqedasoyi"]
 
 [ext_resource type="Script" uid="uid://c7ao75ydsfov0" path="res://Scenes/player.gd" id="1_v0iea"]
-[ext_resource type="Texture2D" uid="uid://cf5snhr5q7gqo" path="res://Assets/knight.png.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://52nrmrd4nopm" path="res://Assets/knight1.png" id="2_cvnsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxglt"]
-size = Vector2(50, 185.375)
+size = Vector2(23, 51)
 
 [node name="Player" type="CharacterBody2D" unique_id=1133743889]
 collision_layer = 3
 script = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=948359945]
-position = Vector2(0, 69.6875)
+position = Vector2(13.5, 28.5)
 shape = SubResource("RectangleShape2D_hxglt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=520025520]
-position = Vector2(27, 46)
-scale = Vector2(0.17807199, 0.1684451)
+position = Vector2(11, 27)
+scale = Vector2(1.2632679, 1.604611)
 texture = ExtResource("2_cvnsp")
