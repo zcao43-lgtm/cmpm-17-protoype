@@ -8,3 +8,4 @@ Added two new levels using TileMapLayer and designed different map layouts.
 Added player and enemy scenes to the levels.
 Implemented level transitions using Area2D and signals.
 Also added a four-frame walking animation for the player and updated the movement script.
+Added two game mechanics: an interactive treasure chest that opens when the player presses E, and a key collection system that requires the player to collect a key before unlocking the next level.
