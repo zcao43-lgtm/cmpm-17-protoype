@@ -3,3 +3,8 @@ I created an enemy scene where the enemy starts chasing the player upon entering
 18/10
 Created a custom, oral-themed tileset featuring tooth-like trees, white candles, platforms, and details such as decayed cavities.
 Used the TileMapLayer system in Godot to construct a new level, completed the environment setup, and integrated scenes for the player character and slime enemies.
+25/10
+Added two new levels using TileMapLayer and designed different map layouts.
+Added player and enemy scenes to the levels.
+Implemented level transitions using Area2D and signals.
+Also added a four-frame walking animation for the player and updated the movement script.
