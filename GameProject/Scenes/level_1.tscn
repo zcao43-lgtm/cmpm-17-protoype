@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ku3gu3ms2a86" path="res://Assets/tileset_template.png" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://c6l1jhbyh05u" path="res://Assets/door.png" id="2_8ffim"]
 [ext_resource type="PackedScene" uid="uid://embjqedasoyi" path="res://Scenes/player.tscn" id="4_6444e"]
+[ext_resource type="PackedScene" uid="uid://c86ebbsfdy4i3" path="res://chest.tscn" id="5_6444e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
 texture = ExtResource("1_vk57k")
@@ -179,10 +180,13 @@ tile_set = SubResource("TileSet_cb07o")
 [node name="exit" type="Area2D" parent="." unique_id=610670457]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=1659941178]
-position = Vector2(346.5, 108.5)
+position = Vector2(347, 109)
 shape = SubResource("RectangleShape2D_hxglt")
 
 [node name="Player" parent="." unique_id=1133743889 instance=ExtResource("4_6444e")]
 position = Vector2(114, 74)
+
+[node name="chest" parent="." unique_id=1517631099 instance=ExtResource("5_6444e")]
+position = Vector2(123, 99)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

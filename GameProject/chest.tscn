@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c86ebbsfdy4i3"]
+
+[ext_resource type="Script" uid="uid://c2i8le60nnhs8" path="res://chest.gd" id="1_8uwsg"]
+[ext_resource type="Texture2D" uid="uid://d0n2sno3lg62q" path="res://Assets/treasure chest.png" id="1_twpm2"]
+[ext_resource type="Texture2D" uid="uid://db8pxyq6scd55" path="res://Assets/chest open.png" id="3_bp1or"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxglt"]
+size = Vector2(26, 24)
+
+[node name="chest" type="Area2D" unique_id=1517631099]
+position = Vector2(537, 326)
+script = ExtResource("1_8uwsg")
+
+[node name="ClosedSprite" type="Sprite2D" parent="." unique_id=1670553500]
+position = Vector2(3.9999847, 37)
+scale = Vector2(0.8906245, 1.21875)
+texture = ExtResource("1_twpm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1485843642]
+position = Vector2(5, 47)
+shape = SubResource("RectangleShape2D_hxglt")
+
+[node name="OpenSprite" type="Sprite2D" parent="." unique_id=1226785486]
+visible = false
+position = Vector2(3, 41)
+scale = Vector2(0.90625, 1)
+texture = ExtResource("3_bp1or")

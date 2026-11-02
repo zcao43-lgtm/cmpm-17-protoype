@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c6l1jhbyh05u" path="res://Assets/door.png" id="2_12fag"]
 [ext_resource type="PackedScene" uid="uid://embjqedasoyi" path="res://Scenes/player.tscn" id="3_1q6tm"]
 [ext_resource type="PackedScene" uid="uid://dsdn186wif7ao" path="res://enemy.tscn" id="4_v36qu"]
+[ext_resource type="PackedScene" uid="uid://dd4xh08vx5ume" path="res://key.tscn" id="6_cggpd"]
+[ext_resource type="PackedScene" uid="uid://c86ebbsfdy4i3" path="res://chest.tscn" id="7_055b2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q6tm"]
 texture = ExtResource("1_smnlx")
@@ -171,5 +173,10 @@ position = Vector2(83, 303)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=564934025]
 position = Vector2(378, 238)
 shape = SubResource("RectangleShape2D_hxglt")
+
+[node name="key" parent="." unique_id=61166701 instance=ExtResource("6_cggpd")]
+
+[node name="chest" parent="." unique_id=1517631099 instance=ExtResource("7_055b2")]
+position = Vector2(336, 412)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

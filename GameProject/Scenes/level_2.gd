@@ -1,5 +1,12 @@
+
 extends Node2D
 
-func _on_exit_body_entered(body: Node2D) -> void:
+func _on_exit_body_entered(body):
 	if body.name == "Player":
-		get_tree().change_scene_to_file("res://Scenes/level_3.tscn")
+		if body.has_key:
+			get_tree().call_deferred(
+				"change_scene_to_file",
+                "res://Scenes/level_3.tscn"
+			)
+		else:
+			print("You need a key!")

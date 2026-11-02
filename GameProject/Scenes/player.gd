@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+var has_key = false
+
+
 @export var speed: float = 200.0
 @export var acceleration: float = 0.05
 @export var deceleration: float = 0.08
