@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://embjqedasoyi" path="res://Scenes/player.tscn" id="3_1q6tm"]
 [ext_resource type="PackedScene" uid="uid://dsdn186wif7ao" path="res://enemy.tscn" id="4_v36qu"]
 [ext_resource type="PackedScene" uid="uid://dd4xh08vx5ume" path="res://key.tscn" id="6_cggpd"]
+[ext_resource type="Texture2D" uid="uid://bhfl1hytia32k" path="res://Assets/light.png" id="7_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://c86ebbsfdy4i3" path="res://chest.tscn" id="7_055b2"]
+[ext_resource type="AudioStream" uid="uid://ddmexuc0o1ma2" path="res://Assets/door voice.wav" id="9_uhnj4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q6tm"]
 texture = ExtResource("1_smnlx")
@@ -176,7 +178,17 @@ shape = SubResource("RectangleShape2D_hxglt")
 
 [node name="key" parent="." unique_id=61166701 instance=ExtResource("6_cggpd")]
 
+[node name="KeyLight" type="PointLight2D" parent="key" unique_id=1006872130]
+position = Vector2(26.999998, 22.999994)
+scale = Vector2(0.8085939, 0.7734373)
+color = Color(1, 1, 0, 1)
+energy = 0.45
+texture = ExtResource("7_2mgoq")
+
 [node name="chest" parent="." unique_id=1517631099 instance=ExtResource("7_055b2")]
 position = Vector2(336, 412)
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="." unique_id=275262145]
+stream = ExtResource("9_uhnj4")
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

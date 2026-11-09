@@ -1,12 +1,13 @@
-
 extends Node2D
 
-func _on_exit_body_entered(body):
-	if body.name == "Player":
-		if body.has_key:
-			get_tree().call_deferred(
-				"change_scene_to_file",
-                "res://Scenes/level_3.tscn"
-			)
-		else:
-			print("You need a key!")
+var exiting = false
+
+func _on_exit_body_entered(body: Node2D) -> void:
+	if body.name == "Player" and not exiting:
+		exiting = true
+		$DoorSound.play()
+		await $DoorSound.finished
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			"res://Scenes/level_3.tscn"
+		)

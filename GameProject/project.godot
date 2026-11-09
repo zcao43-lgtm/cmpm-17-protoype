@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="CMPM-17 Protoype"
-run/main_scene="uid://siwcyljvy5rt"
+run/main_scene="uid://dy0vps6iqcudu"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [display]
 

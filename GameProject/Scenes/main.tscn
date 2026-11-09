@@ -6,8 +6,8 @@
 [node name="Main" type="Node2D" unique_id=1999798412]
 
 [node name="Level 1" parent="." unique_id=1756782727 instance=ExtResource("1_8gbba")]
-position = Vector2(95, 61)
-scale = Vector2(2, 2)
+position = Vector2(-1, 1.9999924)
+scale = Vector2(1.0195138, 1.0171996)
 
 [node name="Enemy" parent="." unique_id=1469651218 instance=ExtResource("2_bo1nx")]
 position = Vector2(40, 41)
